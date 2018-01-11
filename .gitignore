@@ -1,1 +1,9 @@
 backup/
+*.csproj
+*.sln
+*.userprefs
+*.DS_Store
+Mobile-Performance-Starter-Project/Library
+Mobile-Performance-Starter-Project/Temp
+Mobile-Performance-Starter-Project/obj
+
