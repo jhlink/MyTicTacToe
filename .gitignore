@@ -1,4 +1,6 @@
 backup/
+Library/
+Temp/
 *.csproj
 *.sln
 *.userprefs
