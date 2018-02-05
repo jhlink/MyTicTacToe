@@ -1305,7 +1305,7 @@ Transform:
   - {fileID: 1450780804}
   - {fileID: 1859181163}
   m_Father: {fileID: 960457307}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &403534042
 GameObject:
@@ -1810,7 +1810,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 960457307}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &514090562
 MeshRenderer:
@@ -2523,7 +2523,7 @@ Transform:
   - {fileID: 1590900159}
   - {fileID: 1884040224}
   m_Father: {fileID: 960457307}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &849439410 stripped
 Transform:
@@ -3242,10 +3242,10 @@ Transform:
   - {fileID: 1229560202}
   - {fileID: 1561062118}
   - {fileID: 1612715720}
-  - {fileID: 1665781642}
   - {fileID: 514090561}
   - {fileID: 815169433}
   - {fileID: 382168982}
+  - {fileID: 2018175985}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6258,12 +6258,12 @@ Transform:
   m_PrefabParentObject: {fileID: 400092, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1665781641}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 1.0735946, y: 1.4292501, z: -3.020677}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
   m_Children: []
-  m_Father: {fileID: 960457307}
-  m_RootOrder: 11
+  m_Father: {fileID: 2018175985}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1665781643
 MeshRenderer:
@@ -8021,6 +8021,35 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &2018175984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2018175985}
+  m_Layer: 0
+  m_Name: Cabinet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2018175985
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018175984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1665781642}
+  m_Father: {fileID: 960457307}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2033663514
 GameObject:
   m_ObjectHideFlags: 0
