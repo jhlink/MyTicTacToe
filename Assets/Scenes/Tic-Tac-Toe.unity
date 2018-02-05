@@ -719,7 +719,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2ef11282dd51e7a45ac70c69361b6c80, type: 2}
+  - {fileID: 2100000, guid: 5c95d76c868584b2dbbe78d5b7bf57d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1853,7 +1853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 505348679}
   m_Layer: 0
-  m_Name: Furniture_2
+  m_Name: RoomObjectsCollection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5350,7 +5350,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2ef11282dd51e7a45ac70c69361b6c80, type: 2}
+  - {fileID: 2100000, guid: 5c95d76c868584b2dbbe78d5b7bf57d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6182,7 +6182,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2ef11282dd51e7a45ac70c69361b6c80, type: 2}
+  - {fileID: 2100000, guid: 5c95d76c868584b2dbbe78d5b7bf57d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
