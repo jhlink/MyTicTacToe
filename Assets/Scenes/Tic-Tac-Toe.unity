@@ -56,7 +56,7 @@ LightmapSettings:
   m_LightmapEditorSettings:
     serializedVersion: 9
     m_Resolution: 2
-    m_BakeResolution: 10
+    m_BakeResolution: 20
     m_TextureWidth: 1024
     m_TextureHeight: 1024
     m_AO: 0
@@ -961,6 +961,10 @@ Prefab:
       propertyPath: m_Name
       value: LowPolyX_Obj (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1261275729211584, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
   m_IsPrefabParent: 0
@@ -1283,6 +1287,10 @@ Prefab:
       propertyPath: m_Name
       value: LowPolyX_Obj (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1261275729211584, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
   m_IsPrefabParent: 0
@@ -1455,6 +1463,10 @@ Prefab:
     - target: {fileID: 4209752917485396, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261275729211584, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
@@ -2465,6 +2477,10 @@ Prefab:
     - target: {fileID: 1261275729211584, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
       propertyPath: m_Name
       value: LowPolyX_Obj (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261275729211584, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
@@ -6144,7 +6160,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1683042991
 Transform:
@@ -6232,7 +6248,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0086, y: 0.008599999, z: 0.0001739514}
-  m_Center: {x: -0.0015, y: 0.001499999, z: -0.0004130246}
+  m_Center: {x: -0, y: 0, z: 0}
 --- !u!54 &1683042995
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6609,6 +6625,10 @@ Prefab:
     - target: {fileID: 1261275729211584, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
       propertyPath: m_Name
       value: LowPolyX_Obj (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261275729211584, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7eee56981ab53d4fa02f57a00e58a45, type: 2}
