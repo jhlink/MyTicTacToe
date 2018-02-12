@@ -9,6 +9,9 @@ public class headControl : MonoBehaviour {
 	private GameLogic mainGameLogicController;
 	private GameObject currentPlayerHeldPiece;
     private float speed = 5.0f;
+	private bool playerFinishedPlay = false;
+	private float rotationEqualityThreshold = 1.0f;
+
 	// Use this for initialization
 	void Start () {
 		mainGameLogicController = GameLogic.GetComponent<GameLogic> ();
@@ -20,6 +23,10 @@ public class headControl : MonoBehaviour {
 
 	public void setCurrentPlayerHeldPiece(GameObject playerPiece) {
 		this.currentPlayerHeldPiece = playerPiece;
+
+		if (!playerPiece) {
+			playerFinishedPlay = true;
+		}
 	}
 
 	void FixedUpdate() {
@@ -29,11 +36,22 @@ public class headControl : MonoBehaviour {
             // slerp to the desired rotation over time
             transform.rotation = Quaternion.Slerp(transform.rotation, rot, speed * Time.deltaTime);
         } else {
-            Vector3 dir = Player.transform.position - transform.position;
-            dir.y = 0; // keep the direction strictly horizontal
-            Quaternion rot = Quaternion.LookRotation(-dir);
-            // slerp to the desired rotation over time
-            transform.rotation = Quaternion.Slerp(transform.rotation, rot, speed * Time.deltaTime);
+			if (playerFinishedPlay) {
+				pensiveHeadRotation ();
+			}
         }
+	}
+
+	void pensiveHeadRotation() {
+		Vector3 dir = Player.transform.position - transform.position;
+		dir.y = 0; // keep the direction strictly horizontal
+		Quaternion rot = Quaternion.LookRotation (-dir);
+		// slerp to the desired rotation over time
+		transform.rotation = Quaternion.Slerp (transform.rotation, rot, speed * Time.deltaTime);
+
+		float angleBetweenTwoQuats = Quaternion.Angle(transform.rotation, rot);
+		if (angleBetweenTwoQuats < rotationEqualityThreshold) {
+			playerFinishedPlay = false;
+		}
 	}
 }
