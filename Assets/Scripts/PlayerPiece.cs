@@ -17,10 +17,14 @@ public class PlayerPiece : MonoBehaviour {
 	public float gravityFactor = 10.0f;
 
 	private Vector3 forceDirection;
+	private bool isPlayerTurn = false;
+	private Rigidbody playerPieceRigidObject;
+	private BoxCollider playerPieceBoxCollider;
 
     // Use this for initialization
     void Start() {
-		
+		playerPieceRigidObject = this.gameObject.GetComponent<Rigidbody> ();
+		playerPieceBoxCollider = this.gameObject.GetComponent<BoxCollider> ();
 	}
 	
 	// Update is called once per frame
@@ -31,38 +35,38 @@ public class PlayerPiece : MonoBehaviour {
     public void inPlay() {
         //If this piece has been selected
         //Make it hover above the raycast
-		if (this.hasBeenPlayed == false) {
+		if (hasBeenPlayed == false) {
+			if (!GameLogic.GetComponent<GameLogic> ().playerTurn) {
+				return;
+			}
 			holdingPiece = true;
 		}
     }
 
 
 	void FixedUpdate() {
-		if (GameLogic.GetComponent<GameLogic>().playerTurn == true) {
-			if (holdingPiece == true) {
-				Vector3 forwardDir = raycastHolder.transform.TransformDirection(Vector3.forward) * 100;
-				Debug.DrawRay(raycastHolder.transform.position, forwardDir, Color.green);
+		if (holdingPiece == true) {
+			Vector3 forwardDir = raycastHolder.transform.TransformDirection(Vector3.forward) * 100;
+			Debug.DrawRay(raycastHolder.transform.position, forwardDir, Color.green);
 
 
-				if (Physics.Raycast(raycastHolder.transform.position, (forwardDir), out hit)) {
-					gravityAttractor.transform.position = new Vector3(hit.point.x, hit.point.y + hoverHeight, hit.point.z);
+			if (Physics.Raycast(raycastHolder.transform.position, (forwardDir), out hit)) {
+				gravityAttractor.transform.position = new Vector3(hit.point.x, hit.point.y + hoverHeight, hit.point.z);
 
-					pieceBeingHeld.GetComponent<Rigidbody> ().useGravity = false;
-					pieceBeingHeld.GetComponent<BoxCollider> ().enabled = false;
+				playerPieceRigidObject.useGravity = false;
+				playerPieceBoxCollider.enabled = false;
 
-					pieceBeingHeld.GetComponent<Rigidbody>().AddForce(gravityAttractor.transform.position - pieceBeingHeld.transform.position);
+				playerPieceRigidObject.AddForce(gravityAttractor.transform.position - this.gameObject.transform.position);
 
-					if (hit.collider.gameObject.tag == "Grid Plate") {
-						if (Input.GetMouseButtonDown(0)) {
-							holdingPiece = false;
-							hit.collider.gameObject.SetActive(false);
-							pieceBeingHeld.GetComponent<PlayerPiece>().hasBeenPlayed = true;
-							pieceBeingHeld.GetComponent<Rigidbody> ().useGravity = true;
-							pieceBeingHeld.GetComponent<BoxCollider> ().enabled = true;
-							GameLogic.GetComponent<GameLogic>().playerMove(hit.collider.gameObject);
-						}
+				if (hit.collider.gameObject.tag == "Grid Plate") {
+					if (Input.GetMouseButtonDown(0)) {
+						holdingPiece = false;
+						hit.collider.gameObject.SetActive(false);
+						hasBeenPlayed = true;
+						playerPieceRigidObject.useGravity = true;
+						playerPieceBoxCollider.enabled = true;
+						GameLogic.GetComponent<GameLogic>().playerMove(hit.collider.gameObject);
 					}
-
 				}
 			}
 		}
