@@ -12,25 +12,31 @@ public class GameLogic : MonoBehaviour {
     public GameObject restartPanel;
     public Text restartText;
 
-    public Text AIFace;
+	public Text AIFace;
+	public GameObject AIHead;
+
+	public GameObject PlayerPieceObject;
+	public GameObject AIPieceObject;
 
     //For our board we will just have a simple array of 9 integers scanning from top left to bottom right.  0 Represents an open slot, 1 represents a player piece, 2 represents an AI piece
     public int[] boardRepresentation;
     public GameObject[] PlayerPieces;
     public GameObject[] AIPieces;
 
-
-
     public Vector3[] PlayerPiecePositions;
     public Vector3[] AIPiecePositions;
     public int AIMoveCount = 0;
 
-    public GameObject[] gridPlates;
+	public GameObject[] gridPlates;
+
+	private GameObject currentHeldPlayerPiece = null;
+	private headControl AIHeadControlScript;
 
     // Use this for initialization
     void Start() {
+		AIHeadControlScript = AIHead.GetComponent<headControl> ();
         AIFace.text = ":)";
-
+ 
         for (int i = 0; i < 9; i++) {
             gridPlates[i].GetComponent<ParticleSystem>().Stop();
         }
@@ -46,8 +52,13 @@ public class GameLogic : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+	}
 
-    }
+	public void setCurrentHeldPlayerPiece(GameObject playerPiece) {
+		this.currentHeldPlayerPiece = playerPiece;
+		AIHeadControlScript.setCurrentPlayerHeldPiece (playerPiece);
+	}
+
     public void initBoard() {
         //Initialize our board array to be full of 'empty' 0s
         boardRepresentation = new int[9];
@@ -55,16 +66,13 @@ public class GameLogic : MonoBehaviour {
             boardRepresentation[i] = 0;
             gridPlates[i].SetActive(true);
             gridPlates[i].GetComponent<MeshRenderer>().enabled = false;
-
-        }
+		}
 
         for (int i = 0; i < 5; i++) {
             PlayerPieces[i].transform.position = PlayerPiecePositions[i];
             AIPieces[i].transform.position = AIPiecePositions[i];
-
-            PlayerPieces[i].GetComponent<PlayerPiece>().hasBeenPlayed = false;
-            
-        }
+			PlayerPieces[i].GetComponent<PlayerPiece>().hasBeenPlayed = false;
+		}
     }
 
     public void AIMove() {
@@ -116,7 +124,8 @@ public class GameLogic : MonoBehaviour {
         
 
     }
-    public void newGame() {
+    
+	public void newGame() {
         gameEnded = false;
         AIMoveCount = 0;
         initBoard();
@@ -136,6 +145,8 @@ public class GameLogic : MonoBehaviour {
             }
             //Debug.Log(boardRepresentation[i]);
         }
+		currentHeldPlayerPiece = null;
+		AIHeadControlScript.setCurrentPlayerHeldPiece (currentHeldPlayerPiece);
         playerTurn = false;
         Invoke("checkForVictory", 1);
         if (gameEnded == false) {

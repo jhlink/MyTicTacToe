@@ -3818,6 +3818,9 @@ MonoBehaviour:
   restartPanel: {fileID: 1326203639}
   restartText: {fileID: 1112835267}
   AIFace: {fileID: 1964396362}
+  AIHead: {fileID: 770133499}
+  PlayerPieceObject: {fileID: 0}
+  AIPieceObject: {fileID: 0}
   boardRepresentation: 
   PlayerPieces:
   - {fileID: 1178829937}

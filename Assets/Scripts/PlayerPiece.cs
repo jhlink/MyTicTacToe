@@ -20,11 +20,13 @@ public class PlayerPiece : MonoBehaviour {
 	private bool isPlayerTurn = false;
 	private Rigidbody playerPieceRigidObject;
 	private BoxCollider playerPieceBoxCollider;
+	private GameLogic mainGameLogicController;
 
     // Use this for initialization
     void Start() {
 		playerPieceRigidObject = this.gameObject.GetComponent<Rigidbody> ();
 		playerPieceBoxCollider = this.gameObject.GetComponent<BoxCollider> ();
+		mainGameLogicController = GameLogic.GetComponent<GameLogic> ();
 	}
 	
 	// Update is called once per frame
@@ -36,10 +38,11 @@ public class PlayerPiece : MonoBehaviour {
         //If this piece has been selected
         //Make it hover above the raycast
 		if (hasBeenPlayed == false) {
-			if (!GameLogic.GetComponent<GameLogic> ().playerTurn) {
+			if (!mainGameLogicController.playerTurn) {
 				return;
 			}
 			holdingPiece = true;
+			mainGameLogicController.setCurrentHeldPlayerPiece (this.gameObject);
 		}
     }
 
@@ -65,7 +68,7 @@ public class PlayerPiece : MonoBehaviour {
 						hasBeenPlayed = true;
 						playerPieceRigidObject.useGravity = true;
 						playerPieceBoxCollider.enabled = true;
-						GameLogic.GetComponent<GameLogic>().playerMove(hit.collider.gameObject);
+						mainGameLogicController.playerMove(hit.collider.gameObject);
 					}
 				}
 			}
