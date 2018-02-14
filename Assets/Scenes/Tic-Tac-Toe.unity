@@ -762,7 +762,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 133354688}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -1617,7 +1617,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 435591328}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -2501,7 +2501,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 684112217}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -3068,7 +3068,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 861083764}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -3882,14 +3882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad0bd7e697e3da43815d97d69885320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameLogic: {fileID: 1108107845}
-  raycastHolder: {fileID: 1888205395}
-  player: {fileID: 1169339517}
-  pieceBeingHeld: {fileID: 0}
-  gravityAttractor: {fileID: 1974694744}
-  holdingPiece: 0
-  hoverHeight: 0.3
-  gravityFactor: 1
 --- !u!1 &1112835265
 GameObject:
   m_ObjectHideFlags: 0
