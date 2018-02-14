@@ -2074,6 +2074,11 @@ Prefab:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 23036371017967614, guid: 5f496826f57d2064f98cc7a523e7ff8f,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f496826f57d2064f98cc7a523e7ff8f, type: 2}
   m_IsPrefabParent: 0
@@ -2286,6 +2291,11 @@ Prefab:
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 23036371017967614, guid: 5f496826f57d2064f98cc7a523e7ff8f,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f496826f57d2064f98cc7a523e7ff8f, type: 2}
@@ -2916,6 +2926,11 @@ Prefab:
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 23036371017967614, guid: 5f496826f57d2064f98cc7a523e7ff8f,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f496826f57d2064f98cc7a523e7ff8f, type: 2}
@@ -4957,7 +4972,7 @@ Prefab:
     - target: {fileID: 23036371017967614, guid: 5f496826f57d2064f98cc7a523e7ff8f,
         type: 2}
       propertyPath: m_ReceiveShadows
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 23036371017967614, guid: 5f496826f57d2064f98cc7a523e7ff8f,
         type: 2}
@@ -6418,6 +6433,11 @@ Prefab:
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 23036371017967614, guid: 5f496826f57d2064f98cc7a523e7ff8f,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f496826f57d2064f98cc7a523e7ff8f, type: 2}
