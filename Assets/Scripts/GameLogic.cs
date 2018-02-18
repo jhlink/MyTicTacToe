@@ -130,10 +130,12 @@ public class GameLogic : MonoBehaviour {
         gameEnded = false;
         AIMoveCount = 0;
         initBoard();
+		AIFace.text = ":)";
         playerTurn = true;
         drawGame = false;
         playerWon = false;
         restartPanel.SetActive(false);
+
     }
 
     public void playerMove(GameObject selectedPlate) {
