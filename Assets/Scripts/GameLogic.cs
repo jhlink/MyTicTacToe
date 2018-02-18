@@ -81,6 +81,17 @@ public class GameLogic : MonoBehaviour {
 		}
     }
 
+	private void disableGameComponents() {
+		for (int i = 0; i < 9; i++) {
+			gridPlates[i].SetActive(false);
+		}
+
+		for (int i = 0; i < 5; i++) {
+			PlayerPieces [i].GetComponent<PlayerPiece> ().hasBeenPlayed = true;
+		}
+	}
+
+
     public void AIMove() {
         //If it is the AI's turn to move
         //Randomly select an open slot on the board
@@ -124,7 +135,9 @@ public class GameLogic : MonoBehaviour {
             restartText.text = "Draw!";
         }
         
+		// This exists to prevent the player from continuing after the game has ended. 
 
+		disableGameComponents ();
         //Right now just loop but make this contingent on play again action
         
         restartPanel.SetActive(true);
