@@ -46,8 +46,11 @@ public class PlayerPiece : MonoBehaviour {
 			if (!mainGameLogicController.playerTurn) {
 				return;
 			}
-			holdingPiece = true;
-			mainGameLogicController.setCurrentHeldPlayerPiece (this.gameObject);
+			bool notifyResult = mainGameLogicController.setCurrentHeldPlayerPiece (this.gameObject);
+
+			if (notifyResult) {
+				holdingPiece = true;
+			}
 		}
     }
 

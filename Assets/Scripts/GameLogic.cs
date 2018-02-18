@@ -54,9 +54,15 @@ public class GameLogic : MonoBehaviour {
     void Update() {
 	}
 
-	public void setCurrentHeldPlayerPiece(GameObject playerPiece) {
-		this.currentHeldPlayerPiece = playerPiece;
+	public bool setCurrentHeldPlayerPiece(GameObject playerPiece) {
+		bool playerPieceSet = false;
+		if (!this.currentHeldPlayerPiece) {
+			this.currentHeldPlayerPiece = playerPiece;
+			playerPieceSet = true;
+		}
 		AIHeadControlScript.setCurrentPlayerHeldPiece (playerPiece);
+
+		return playerPieceSet;
 	}
 
     public void initBoard() {
