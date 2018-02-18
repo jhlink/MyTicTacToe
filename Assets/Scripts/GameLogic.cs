@@ -89,7 +89,8 @@ public class GameLogic : MonoBehaviour {
                     boardRepresentation[movePosition] = 2; //If it's open, set it to our AI move
 
                     AIPieces[AIMoveCount].transform.position = new Vector3(gridPlates[movePosition].transform.position.x, gridPlates[movePosition].transform.position.y + 0.3f, gridPlates[movePosition].transform.position.z);
-                    AIMoveCount++;
+					gridPlates [movePosition].SetActive (false);
+					AIMoveCount++;
 
                     i = -5; //Escape the for loop
                 }
@@ -133,7 +134,6 @@ public class GameLogic : MonoBehaviour {
         drawGame = false;
         playerWon = false;
         restartPanel.SetActive(false);
-
     }
 
     public void playerMove(GameObject selectedPlate) {
